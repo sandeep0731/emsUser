@@ -29,7 +29,6 @@ public class ExpenseController {
 	@RequestMapping(value="/add-exp", method=RequestMethod.GET)
 	public ModelAndView addExpense(){
 		ModelAndView m=new ModelAndView("add-expense");
-		
 		return m;
 	}	
 	
@@ -57,17 +56,14 @@ public class ExpenseController {
 	}
 	
 	
-	/*This method is used to get all the expense data*/
 	
+	/*This method is used to get all the expense data*/
 	@RequestMapping(value="/getallexpense",method=RequestMethod.GET)
 	@Produces({"application/json"})
-	public ResponseEntity<List<Expense>> fetchallexpense(){
-		
+	public ResponseEntity<List<Expense>> fetchallexpense(){	
 		System.out.println("Inside the getallexpense controller");
 		List<Expense> getexp=eserv.getallexpenses();
 		System.out.println(getexp.size());
 		return new ResponseEntity<List<Expense>>(getexp,HttpStatus.FOUND);
-	}
-	
-	
+	}	
 }

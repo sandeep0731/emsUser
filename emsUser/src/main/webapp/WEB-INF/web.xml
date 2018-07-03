@@ -21,7 +21,7 @@
 		<servlet-mapping>
 		<servlet-name>expTrackerServlet</servlet-name>
 		<url-pattern>*.html</url-pattern>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.json</url-pattern>
 		</servlet-mapping>
 	
 	

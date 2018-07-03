@@ -57,7 +57,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="login.html">Add Category</a>
+              <a href="add-category.html">Add Category</a>
             </li>
             <li>
               <a href="register.html">View Category</a>
