@@ -1,6 +1,8 @@
 package com.ems.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -70,7 +72,7 @@ public class LoginController {
 	
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String loginintoDashboard(@RequestParam("email") String email,@RequestParam("pass") String pass,Model m){
+	public String loginintoDashboard(HttpSession r,@RequestParam("email") String email,@RequestParam("pass") String pass,Model m){
 		
 			User user = (User)lgin.verifyUser(email,pass);
 		    String final_result=null;
@@ -84,6 +86,7 @@ public class LoginController {
 		    }
 		    else{
 		        
+		    	r.setAttribute("usern", email);
 		    	final_result="dashboard";
 		    }
 		    

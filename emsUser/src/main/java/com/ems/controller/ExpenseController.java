@@ -3,6 +3,7 @@ package com.ems.controller;
 import java.text.ParseException;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 //import org.springframework.http.MediaType;
@@ -36,9 +37,9 @@ public class ExpenseController {
 	
 	/*Method to add an expense in the db*/
 	@RequestMapping(value="/addintoexp",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON)
-	public ResponseEntity<String> addexpense(@RequestBody Expense expp){
+	public ResponseEntity<String> addexpense(@RequestBody Expense expp,HttpSession s){
 		
-		
+		System.out.println(s.getAttribute("usernam"));
 		System.out.println("Inside AddintoExp  --date -- "+ expp.getExp_date());
 		
 		String date=expp.getExp_date().split("T")[0];
